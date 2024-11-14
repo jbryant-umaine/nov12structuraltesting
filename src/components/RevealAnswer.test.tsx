@@ -53,6 +53,18 @@ describe("Reveal Answer", () => {
         });
     });
 
+    test("Click Toggle Hint Visibility button, click button again", async () => {
+        const toggleHintButton = screen.getByRole("button", {
+            name: /Toggle Hint/i,
+        });
+        await act(async () => {
+            toggleHintButton.click();
+        });
+        await act(async () => {
+            toggleHintButton.click();
+        });
+    });
+
     // Click Toggle Answer Visibility button, system shows answer
     test("Click Toggle Answer Visibility button, click answer button again, system hides answer", async () => {
         const toggleAnswerButton = screen.getByRole("button", {
